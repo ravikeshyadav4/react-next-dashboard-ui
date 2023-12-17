@@ -3,6 +3,7 @@ import SideNav from "@/src/dashboard/SideNav"
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Reshaped, View } from "reshaped"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,13 +20,15 @@ export default function DashboardLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      <div>
-        <Header />
-        <div className="flex">
-        <SideNav />
-        {children}
-        </div>
-        </div>
+        <Reshaped theme="reshaped">
+          <Header />
+          <View.Item columns={12}>
+            <SideNav />
+              <div className="ml-80">
+                {children}
+              </div>
+            </View.Item>
+        </Reshaped>
     </body>
     </html>
   )
