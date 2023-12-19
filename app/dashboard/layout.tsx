@@ -4,7 +4,7 @@ import SideNav from "@/src/dashboard/SideNav"
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Reshaped, View } from "reshaped"
-
+import "reshaped/themes/reshaped/theme.css";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
