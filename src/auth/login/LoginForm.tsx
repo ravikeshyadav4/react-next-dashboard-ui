@@ -4,21 +4,18 @@ import InputField from "@/src/components/InputField";
 import * as Yup from "yup";
 import { Button } from 'reshaped';
 const schema = Yup.object().shape({
-  name: Yup.string()
-    .required("Name is a required field")
-    .min(3, "Name must be at least 3 characters"),
   email: Yup.string()
     .required("Email is a required field")
-    .email("Invalid email format"),
+    .min(3,"Username is not correct"),
   password: Yup.string()
     .required("Password is a required field")
     .min(8, "Password must be at least 8 characters"),
 });
-const SignUpForm = () => {
+const LoginForm = () => {
   return (
     <Formik
         validationSchema={schema}
-        initialValues={{ name: '', email: '', password: '' }}
+        initialValues={{ email: '', password: '' }}
         onSubmit={(values) => {
           alert(JSON.stringify(values));
         }}
@@ -32,20 +29,6 @@ const SignUpForm = () => {
           handleSubmit,
         }) => (
               <Form noValidate onSubmit={handleSubmit}>
-                <InputField
-                  type="text"
-                  name="name"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.name}
-                  placeholder="Enter name"
-                  className="form-control inp_text"
-                  id="name"
-                  label="Full name" 
-                  errorMessage={errors.name} 
-                    error={(errors.name && touched.name) ? true : false}
-                />
-                
                 <InputField
                   type="email"
                   name="email"
@@ -71,10 +54,10 @@ const SignUpForm = () => {
                   label="Password" 
                     errorMessage={errors.password} error={(errors.password && touched.password) ? true : false}
                 />
-                <Button variant='solid' type="submit" className="w-full">Sign up</Button>
+                <Button variant='solid' type="submit" className="w-full">Login</Button>
               </Form>
         )}
       </Formik>
   );
 };
-export default SignUpForm;
+export default LoginForm;

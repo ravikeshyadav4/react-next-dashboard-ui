@@ -5,7 +5,7 @@ import { Form, Formik } from 'formik';
 import "reshaped/themes/reshaped/theme.css";
 import InputField from "@/src/components/InputField";
 import SignUpForm from "@/src/auth/signup/SignUpForm";
-import LoginForm from "@/src/auth/login/SignUpForm";
+import LoginForm from "@/src/auth/login/LoginForm";
 
 const Login = () => {
 
