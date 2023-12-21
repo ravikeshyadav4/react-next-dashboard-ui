@@ -3,6 +3,8 @@ import { Form, Formik } from 'formik';
 import InputField from "@/src/components/InputField";
 import * as Yup from "yup";
 import { Button } from 'reshaped';
+import { useRouter } from 'next/navigation';
+
 const schema = Yup.object().shape({
   email: Yup.string()
     .required("Email is a required field")
@@ -11,13 +13,21 @@ const schema = Yup.object().shape({
     .required("Password is a required field")
     .min(8, "Password must be at least 8 characters"),
 });
+
+
 const LoginForm = () => {
+  const router = useRouter();
+  React.useEffect(() => {
+    localStorage.removeItem('user');
+  }, [router]);
+
   return (
     <Formik
         validationSchema={schema}
         initialValues={{ email: '', password: '' }}
         onSubmit={(values) => {
-          alert(JSON.stringify(values));
+          localStorage.setItem('user', JSON.stringify(values));
+          router.push('/dashboard');
         }}
       >
         {({

@@ -8,7 +8,7 @@ import SignUpForm from "@/src/auth/signup/SignUpForm";
 import LoginForm from "@/src/auth/login/LoginForm";
 
 const Login = () => {
-
+    
 
     return <Reshaped theme="reshaped">
         <div className="flex items-center justify-center h-screen">
