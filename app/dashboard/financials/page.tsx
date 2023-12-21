@@ -1,8 +1,9 @@
 "use client"
 
 import useFetch from "@/src/utils/useFetch";
+import { type } from "os";
 
-interface APIResponse {
+type APIResponse = {
   userId:	number;
   id:	number;
   title:	String;

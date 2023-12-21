@@ -7,11 +7,11 @@ import LogoIcon from "../icons/LogoIcon";
 
 export default function Header() {
     return (
-            <div className="flex justify-between p-2 border">
-                <div className="pt-2">
+            <div className="flex justify-between p-2 border items-center">
+                <div className="">
                     <Icon svg={MenuIcon} size={5} autoWidth />
                 </div>
-                <div className="pt-2">
+                <div className="">
                 <Icon svg={LogoIcon} size={5} autoWidth />
                 </div>
                 <div className="">
