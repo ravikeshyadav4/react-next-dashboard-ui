@@ -30,8 +30,7 @@ const SignUpForm = () => {
         initialValues={{ name: '', email: '', password: '' }}
         onSubmit={(values) => {
             localStorage.setItem('user', JSON.stringify(values));
-          router.push('/dashboard');
-          alert(JSON.stringify(values));
+            router.push('/dashboard');
         }}
       >
         {({
